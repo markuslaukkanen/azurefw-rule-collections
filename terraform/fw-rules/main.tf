@@ -14,7 +14,6 @@ module "fw_network_rules_spoke_x" {
       rules = [
         {
           destination_addresses = [ "185.40.75.20" ]
-          destination_fqdns = []
           destination_ports = [ "22" ]
           name = "sftp_location_1"
           protocols = [ "TCP" ]
@@ -39,7 +38,6 @@ module "fw_network_rules_spoke_x" {
       rules = [
         {
           destination_addresses = [ "value" ]
-          destination_fqdns = [ "value" ]
           destination_ports = [ "value" ]
           name = "value"
           protocols = [ "value" ]
@@ -64,7 +62,6 @@ module "fw_application_rules_project_x" {
       resource_group_name = "rg-test-fw-westeu"
       rules = [
         {
-          # fqdn_tags = []
           name = "Datadog"
           source_addresses = [ "192.168.50.0/27" ]
           target_fqdns = [ "*.agent.datadoghq.eu", "*.logs.datadoghq.eu" ]
@@ -83,7 +80,6 @@ module "fw_application_rules_project_x" {
           fqdn_tags = ["WindowsUpdate"]
           name = "WindowsUpdate"
           source_addresses = ["192.168.50.0/27"]
-          # target_fqdns = []
           protocols = []
         }
       ]

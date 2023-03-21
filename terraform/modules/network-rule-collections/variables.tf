@@ -11,7 +11,7 @@ variable "network_rules" {
       source_addresses = list(string)
       destination_ports = list(string)
       destination_addresses = list(string)
-      destination_fqdns = list(string) # DNS proxy must be enabled on FW
+      destination_fqdns = optional(list(string), []) # DNS proxy must be enabled on FW
       protocols = list(string) }
     ))
   }))
